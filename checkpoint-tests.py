@@ -6,7 +6,7 @@ conn = sqlite3.connect('./prisma/dev.db')
 # Create a cursor object
 c = conn.cursor()
 
-name = input('Enter name of race: ')
+name = input('Please enter the name of race: ')
 
 # Execute a query
 c.execute("SELECT * FROM Race WHERE name = '" + name + "'")
