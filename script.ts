@@ -21,10 +21,10 @@ async function main() {
 
     // prompt the user for a name
     rl.question('Enter the name of the race: ', async (name) => {
-        const query = 'SELECT * FROM Race WHERE name = "' + name + '"';
-        const prismaQuery = Prisma.raw(query);
-        const result = await prisma.$queryRaw(prismaQuery);
-        console.log(result);
+        const result = await prisma.$queryRaw(
+            Prisma.raw(`SELECT id, name FROM "User" WHERE name = ${name}`)
+        );
+        console.log(result)
         rl.close();
     });
 }
