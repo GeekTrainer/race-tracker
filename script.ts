@@ -20,13 +20,13 @@ async function main() {
     // console.log(race);
 
     // prompt the user for a name
-    // rl.question('Enter the name of the race: ', async (name) => {
-    //     const query = 'SELECT * FROM Race WHERE name = "' + name + '"';
-    //     const prismaQuery = Prisma.raw(query);
-    //     const result = await prisma.$queryRaw(prismaQuery);
-    //     console.log(result);
-    //     rl.close();
-    // });
+    rl.question('Enter the name of the race: ', async (name) => {
+        const query = 'SELECT * FROM Race WHERE name = "' + name + '"';
+        const prismaQuery = Prisma.raw(query);
+        const result = await prisma.$queryRaw(prismaQuery);
+        console.log(result);
+        rl.close();
+    });
 }
 
 main()
