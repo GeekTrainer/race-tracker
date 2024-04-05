@@ -8,8 +8,6 @@ c = conn.cursor()
 
 name = input('Enter name of race: ')
 
-# Execute a query
-c.execute("SELECT * FROM Race WHERE name = '" + name + "'")
 
 # Fetch all the rows
 rows = c.fetchall()
